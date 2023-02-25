@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="btn1" id="createBtn">Add A New Row</button>
+        
+
+        <table id="table">
+            <thead id="tableHead">
+                <tr class="heading">
+                    <th class="ID">ID</th>
+                    <th class="name">Student Name</th>
+                    <th>Student Roll</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>MarkedBy</th>
+                    <th class="save">Save</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+
+        function renderDataInTheTable(arr) {
+            const mytable = document.getElementById("tableBody");
+            console.log("mytable "+mytable)
+            
+            arr.forEach(arr => {
+                let newRow = document.createElement("tr");
+                
+                Object.values(arr).forEach((value) => {
+                    let cell = document.createElement("td");
+                    cell.innerText = value;
+                    newRow.appendChild(cell);
+                })
+                mytable.appendChild(newRow);
+            });
+        }</script>
+        <script src="script.js"></script>
+</body>
+</html>
